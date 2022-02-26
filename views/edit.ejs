@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>students</title>
+</head>
+<body style="background-color: brown;">
+    <div align="center">
+        <div style="background-color: darkred; margin-top: 10%; width: 450px; border-radius: 10px;">
+                <h1>تعديل</h1><br>
+                <% stuinfo.forEach(stu => { %>
+                    <% if(stu._id == stuid) { %>
+                    <form  action="/updateSave/<%=stu._id%>?_method=PUT" method="POST">
+                        <input style="margin-bottom: 10px;" type="text" name="name" value="<%=stu.name%>" ></input><br>
+                        <input style="margin-bottom: 10px;" type="email" name="email" value="<%=stu.email%>" ></input><br>
+                        <input style="margin-bottom: 15px;" type="password" name="password" placeholder="new password"></input><br>
+                        <button type="submit" class="btn btn-outline-danger">حفظ</button>
+                        <button class="btn btn-outline-danger"><a  href="/main">الغاء</a></button>
+                        
+                        <% }})%>
+                    </form><br>
+                  
+            </div>
+    </div>
+</body>
+</html>
